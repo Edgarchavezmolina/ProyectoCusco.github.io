@@ -1,121 +1,62 @@
 // ignore_for_file: non_constant_identifier_names, duplicate_ignore, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/BotonNRutas/routes.dart';
+
 import 'package:flutter_application_1/componentesMenu/Drawer_Menu.dart';
 
-import 'package:flutter_application_1/ejemplos/ejemplo2.dart';
-import 'package:flutter_application_1/ejemplos/imagenesC.dart';
-import 'package:flutter_application_1/ejemplos/imagenesL.dart';
-
-import '../ejemplos/ImagenM.dart';
+import 'NavigatorDrawer.dart';
 
 // ignore: use_key_in_widget_constructors
-class EjemploD extends StatelessWidget {
+
+class EjemploD extends StatefulWidget {
+  const EjemploD({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) => Scaffold(
-      drawer: navigationDrawer(),
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Menu',
-          style: TextStyle(color: Colors.black),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: Builder(builder: (context) {
-          return IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: Icon(Icons.menu_book_outlined),
-            color: Colors.black,
-          );
-        }),
-      ),
-      body: ListView(
-        children: <Widget>[
-          Cabecera(),
-          buscador(),
-          SizedBox(
-            height: 30,
-          ),
-          ItemCuadrado(),
-          SizedBox(
-            height: 20,
-          ),
-          imagenesL(),
-          SizedBox(
-            height: 20,
-          ),
-          ImagenMAC(),
-        ],
-      ),
-      bottomNavigationBar: navInferior());
+  State<EjemploD> createState() => _EjemploDState();
 }
 
-BottomNavigationBar navInferior() {
+class _EjemploDState extends State<EjemploD> {
   int index = 0;
-  return BottomNavigationBar(
-    currentIndex: index,
-    onTap: (int i) {
-      index = i;
-    },
-    backgroundColor: Colors.white,
-    selectedItemColor: Colors.purple,
-    unselectedItemColor: Colors.black,
-    type: BottomNavigationBarType.fixed,
+  NavInferior? myBNB;
 
-    // ignore: prefer_const_literals_to_create_immutables
-    items: <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home_max),
-        label: 'Inicio',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home_max),
-        label: 'Tours',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.hotel_class_sharp),
-        label: 'Viajes',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.login_outlined),
-        label: 'Listas',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.menu_book_outlined),
-        label: 'Preferidos',
-      ),
-    ],
-  );
+  @override
+  void initState() {
+    myBNB = NavInferior(currendIndex: (i) {
+      setState(() {
+        index = i;
+      });
+    });
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        extendBodyBehindAppBar: true,
+        drawer: navigationDrawer(),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'AIR PLANTS',
+            style: TextStyle(color: Colors.black),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          leading: Builder(builder: (context) {
+            return IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: Icon(Icons.menu_book_outlined),
+              color: Colors.black,
+            );
+          }),
+        ),
+        body: Routes(index: index),
+        bottomNavigationBar: myBNB,
+      );
 }
 
 // ignore: non_constant_identifier_names
-
-Widget buscador() {
-  // ignore: prefer_const_declarations
-  final color = Colors.blue;
-
-  return TextField(
-      style: TextStyle(color: color),
-      decoration: InputDecoration(
-          // ignore: prefer_const_constructors
-          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          hintText: 'Buscar',
-          hintStyle: TextStyle(color: color),
-          prefixIcon: Icon(
-            Icons.search,
-            color: color,
-          ),
-          filled: true,
-          fillColor: Colors.white12,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(color: color.withOpacity(0.7)),
-          ),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(color: color.withOpacity(0.7)))));
-}
 
 Widget listaIcon(String titulo, Widget item, int cantidad) {
   return Column(

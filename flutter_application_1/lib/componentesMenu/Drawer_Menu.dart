@@ -9,9 +9,9 @@ import 'package:flutter_application_1/src/Login.dart';
 
 import '../MenuComponentes/Fechas.dart';
 import '../MenuComponentes/Notificaciones.dart';
+// ignore: unused_import
 import '../MenuComponentes/People.dart';
 import '../MenuComponentes/Plugings.dart';
-import '../MenuComponentes/WorkShop.dart';
 
 // ignore: camel_case_types, use_key_in_widget_constructors
 class navigationDrawer extends StatelessWidget {
@@ -21,9 +21,9 @@ class navigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_declarations
-    final name = 'Faraon';
+    final name = 'Eddy R';
     final email = 'cunumi@abc.com';
-    final image = 'assets/Faraon.jpg';
+    final image = 'assets/perfil/perfil.jpg';
 
     return Drawer(
       child: Material(
@@ -54,12 +54,12 @@ class navigationDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 buildMenuItem(
-                    text: 'people Tours',
+                    text: 'Blog',
                     icon: Icons.people,
                     onClicked: () => selectedItem(context, 0)),
                 const SizedBox(height: 16),
                 buildMenuItem(
-                    text: 'My Favorite',
+                    text: 'Mi Favorito',
                     icon: Icons.favorite_border,
                     onClicked: () => selectedItem(context, 1)),
                 const SizedBox(height: 16),
@@ -69,7 +69,7 @@ class navigationDrawer extends StatelessWidget {
                     onClicked: () => selectedItem(context, 2)),
                 const SizedBox(height: 16),
                 buildMenuItem(
-                    text: 'Fechas',
+                    text: 'Ubicaciones',
                     icon: Icons.update,
                     onClicked: () => selectedItem(context, 3)),
                 const SizedBox(
@@ -81,7 +81,7 @@ class navigationDrawer extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 buildMenuItem(
-                    text: 'Pluging',
+                    text: 'Compartir',
                     icon: Icons.login_sharp,
                     onClicked: () => selectedItem(context, 4)),
                 const SizedBox(height: 16),

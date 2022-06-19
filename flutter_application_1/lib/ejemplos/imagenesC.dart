@@ -16,7 +16,12 @@ class ItemCuadrado extends StatelessWidget {
               Row(
                   children: List.generate(logos.length, (index) {
                 return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 15),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    margin: EdgeInsets.symmetric(horizontal: 03),
                     width: 130,
                     height: 130,
                     decoration: BoxDecoration(

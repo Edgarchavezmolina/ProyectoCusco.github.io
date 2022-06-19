@@ -8,16 +8,11 @@ class Restrafa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Restaurantes Favoritos',
-            style: TextStyle(color: Colors.black),
-          ),
-          backgroundColor: Color.fromARGB(255, 249, 254, 253),
-        ),
         backgroundColor: Color.fromARGB(255, 249, 254, 253),
         body: Column(
-          children: <Widget>[principal()],
+          children: <Widget>[
+            Principal(),
+          ],
         ));
   }
 }

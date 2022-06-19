@@ -1,38 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Restaurantes/N_1%20componentes/barra1.dart';
 
-class principal extends StatelessWidget {
+class Principal extends StatelessWidget {
+  const Principal({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        // ignore: unnecessary_this
-        this.cabecera(),
+        Stack(
+          children: <Widget>[
+            FadeInImage(
+                fit: BoxFit.cover,
+                height: 350,
+                fadeInDuration: Duration(milliseconds: 700),
+                placeholder: AssetImage('assets/Pajaro.gif'),
+                image: NetworkImage(
+                    'https://media-cdn.tripadvisor.com/media/photo-s/0b/45/98/72/bistecca-di-tonno.jpg')),
+            Container(
+              width: double.infinity,
+              height: 350,
+              decoration: BoxDecoration(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  gradient: LinearGradient(colors: <Color>[
+                Color.fromARGB(95, 250, 250, 250),
+                Color.fromARGB(188, 131, 183, 184)
+              ])),
+            ),
+            Positioned(
+                top: 20,
+                right: 10,
+                left: 10,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.black,
+                          ),
+                        )),
+                  ],
+                )),
+            SafeArea(child: Barra()),
+          ],
+        ),
         this.inforest(),
         this.nostros(),
         this.botonera(),
-      ],
-    );
-  }
-
-  Widget cabecera() {
-    return Stack(
-      children: <Widget>[
-        Image.network(
-          'https://media-cdn.tripadvisor.com/media/photo-s/0b/45/98/72/bistecca-di-tonno.jpg',
-          height: 350,
-          fit: BoxFit.cover,
-        ),
-        Container(
-          width: double.infinity,
-          height: 350,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: <Color>[
-            Color.fromARGB(95, 250, 250, 250),
-            Color.fromARGB(188, 131, 183, 184)
-          ])),
-        ),
-        SafeArea(child: barra()),
       ],
     );
   }

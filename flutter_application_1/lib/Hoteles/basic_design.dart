@@ -8,8 +8,7 @@ class BasicDesignScreen extends StatelessWidget {
     return Scaffold(
         body: Column(
       children: [
-        Image.network(
-            "https://www.turiweb.pe/wp-content/uploads/2020/02/xima-cusco1-120220.jpg"),
+        Image.asset("assets/hotelLogo.jpg"),
 
         // Titulo
         Title(),
@@ -71,7 +70,10 @@ class ButtonSection extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         children: [
           CustomButton(icon: Icons.call, text: 'Llamar'),
-          CustomButton(icon: Icons.map, text: 'Ubicación'),
+          CustomButton(
+            icon: Icons.map,
+            text: 'Ubicación',
+          ),
           CustomButton(icon: Icons.share, text: 'Compartir'),
         ],
       ),

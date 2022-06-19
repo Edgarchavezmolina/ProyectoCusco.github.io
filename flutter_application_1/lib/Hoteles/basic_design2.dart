@@ -9,9 +9,7 @@ class BasicDesign2Screen extends StatelessWidget {
     return Scaffold(
         body: Column(
       children: [
-        Image.network(
-            "https://th.bing.com/th/id/R.03858019c653304c078a51678bb73fa3?rik=f8cy5DyLCY8iMw&riu=http%3a%2f%2fpix10.agoda.net%2fhotelImages%2f246%2f246832%2f246832_1208191624007249476.jpg%3fs%3d1024x768&ehk=r39QJg8Ttb2D5%2fLV35yvYn%2b455h3C7WqxVD1uzuRzMw%3d&risl=&pid=ImgRaw&r=0"),
-
+        Image.asset("assets/hotelGeneral.jpg"),
         // Titulo
         Title(),
 
