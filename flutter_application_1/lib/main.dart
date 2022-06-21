@@ -2,8 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Menu/ejemploD.dart';
+import 'package:flutter_application_1/dbHelper/mongodb.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await MongoDatabase.connect();
   runApp(MyApp());
 }
 
@@ -21,3 +24,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
