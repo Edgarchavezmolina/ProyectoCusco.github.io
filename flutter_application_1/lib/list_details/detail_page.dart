@@ -48,7 +48,7 @@ class _DetailPageState extends State<DetailPage>
             backgroundColor: Color(widget.character.color!),
             elevation: 0,
             title: Text(widget.character.title!),
-            leading: CloseButton(),
+            leading: const CloseButton(),
           ),
           body: SingleChildScrollView(
             child: Column(

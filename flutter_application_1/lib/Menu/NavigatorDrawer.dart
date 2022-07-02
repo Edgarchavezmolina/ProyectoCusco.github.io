@@ -34,7 +34,7 @@ class _NavInferiorState extends State<NavInferior> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home_max),
-          label: 'Tours',
+          label: 'Hoteles',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.hotel_class_sharp),

@@ -1,9 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, prefer_const_constructors, duplicate_ignore, prefer_const_declarations
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/ComentarioTours.dart';
 import 'package:flutter_application_1/Hoteles/basic_design.dart';
-import 'package:flutter_application_1/Login2.dart';
 import 'package:flutter_application_1/MenuComponentes/User_page.dart';
 import 'package:flutter_application_1/Restaurantes/resct.dart';
 import 'package:flutter_application_1/Tours/tours.dart';
@@ -152,11 +150,11 @@ class navigationDrawer extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ComenTours()));
+            .push(MaterialPageRoute(builder: (context) => Plugings()));
         break;
       case 5:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => MongodbInsert()));
+            .push(MaterialPageRoute(builder: (context) => Notificaciones()));
         break;
       // ignore: no_duplicate_case_values
       case 6:

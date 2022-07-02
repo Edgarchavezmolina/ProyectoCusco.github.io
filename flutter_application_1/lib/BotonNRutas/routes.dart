@@ -14,7 +14,7 @@ class Routes extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> myList = [
       const Inicio(),
-      const Tours(),
+      const Hotel(),
       const Viajes(),
       const Vuelos(),
       const Comentarios(),
