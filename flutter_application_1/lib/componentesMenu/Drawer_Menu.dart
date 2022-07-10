@@ -154,7 +154,7 @@ class navigationDrawer extends StatelessWidget {
         break;
       case 5:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Notificaciones()));
+            .push(MaterialPageRoute(builder: (context) => MongodbInsert()));
         break;
       // ignore: no_duplicate_case_values
       case 6:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/BotonNRutas/Comentarios.dart';
 import 'package:flutter_application_1/BotonNRutas/Inicio.dart';
 import 'package:flutter_application_1/BotonNRutas/Vuelos.dart';
+import 'package:flutter_application_1/MenuComponentes/Notificaciones.dart';
 
 import 'Tours.dart';
 import 'Viajes.dart';
@@ -17,7 +18,7 @@ class Routes extends StatelessWidget {
       const Hotel(),
       const Viajes(),
       const Vuelos(),
-       MongodbInsert(),
+       ComenTours(),
     ];
     return myList[index];
   }
