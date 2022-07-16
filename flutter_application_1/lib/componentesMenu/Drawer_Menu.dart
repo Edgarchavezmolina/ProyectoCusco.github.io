@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Hoteles/basic_design.dart';
 import 'package:flutter_application_1/MenuComponentes/User_page.dart';
 import 'package:flutter_application_1/Restaurantes/resct.dart';
 import 'package:flutter_application_1/Tours/tours.dart';
+import 'package:flutter_application_1/app_SQLite/Sqlite_send.dart';
 import 'package:flutter_application_1/src/Login.dart';
 
 import '../MenuComponentes/Fechas.dart';
@@ -150,7 +151,7 @@ class navigationDrawer extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Plugings()));
+            .push(MaterialPageRoute(builder: (context) => MySqlite()));
         break;
       case 5:
         Navigator.of(context)

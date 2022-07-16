@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Menu/ejemploD.dart';
+import 'package:flutter_application_1/app_SQLite/Sqlite_send.dart';
 import 'package:flutter_application_1/dbHelper/mongodb.dart';
 import 'package:flutter_application_1/src/Login.dart';
 import 'package:flutter_application_1/src/LoginPrincipal.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: EjemploD(),
+      home: MySqlite(),
     );
   }
 }
