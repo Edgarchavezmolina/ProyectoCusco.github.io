@@ -256,92 +256,92 @@ class _VuelosState extends State<Vuelos> {
   }
 }
 
-class MongodbInsert extends StatefulWidget {
-  MongodbInsert({Key? key}) : super(key: key);
-  @override
-  _MongodbInsertState createState() => _MongodbInsertState();
-}
+// class MongodbInsert extends StatefulWidget {
+//   MongodbInsert({Key? key}) : super(key: key);
+//   @override
+//   _MongodbInsertState createState() => _MongodbInsertState();
+// }
 
-class _MongodbInsertState extends State<MongodbInsert> {
-  var fnameController = new TextEditingController();
-  var lnameController = new TextEditingController();
-  var addressController = new TextEditingController();
+// class _MongodbInsertState extends State<MongodbInsert> {
+//   var fnameController = new TextEditingController();
+//   var lnameController = new TextEditingController();
+//   var addressController = new TextEditingController();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            Text(
-              "Recomienda a la comunidad!",
-              style: TextStyle(fontSize: 22),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            TextField(
-              controller: fnameController,
-              decoration: InputDecoration(labelText: "¿Que lugares visitaste?"),
-            ),
-            TextField(
-              controller: lnameController,
-              decoration: InputDecoration(labelText: "Recomienda Un Restaurante"),
-            ),
-            TextField(
-              controller: addressController,
-              minLines: 3,
-              maxLines: 3,
-              decoration: InputDecoration(labelText: "¿Que tours realizaste?"),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: () {
-                  _insertData(
-                    fnameController.text,
-                    lnameController.text,
-                    addressController.text);
-                },
-                 child: Text('Enviar Comentarios'))
-              ],
-            ),
-          ],
-        ),
-      )),
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SafeArea(
+//           child: Padding(
+//         padding: const EdgeInsets.all(15.0),
+//         child: Column(
+//           children: [
+//             Text(
+//               "Recomienda a la comunidad!",
+//               style: TextStyle(fontSize: 22),
+//             ),
+//             SizedBox(
+//               height: 50,
+//             ),
+//             TextField(
+//               controller: fnameController,
+//               decoration: InputDecoration(labelText: "¿Que lugares visitaste?"),
+//             ),
+//             TextField(
+//               controller: lnameController,
+//               decoration: InputDecoration(labelText: "Recomienda Un Restaurante"),
+//             ),
+//             TextField(
+//               controller: addressController,
+//               minLines: 3,
+//               maxLines: 3,
+//               decoration: InputDecoration(labelText: "¿Que tours realizaste?"),
+//             ),
+//             SizedBox(
+//               height: 50,
+//             ),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 ElevatedButton(onPressed: () {
+//                   _insertData(
+//                     fnameController.text,
+//                     lnameController.text,
+//                     addressController.text);
+//                 },
+//                  child: Text('Enviar Comentarios'))
+//               ],
+//             ),
+//           ],
+//         ),
+//       )),
+//     );
+//   }
 
-  Future<void> _insertData(String fName, String lName, String address) async{
-    var _id = M.ObjectId();
-    final data = MongoDbModel(
-      id: _id, firstName: fName, lastName: lName, address: address);
-      var result = await MongoDatabase.insert(data);
-    ScaffoldMessenger.of(context)
-    .showSnackBar(SnackBar(content: Text("Insert ID"+ _id.$oid)));
-     _clearAll();
-  }
+//   Future<void> _insertData(String fName, String lName, String address) async{
+//     var _id = M.ObjectId();
+//     final data = MongoDbModel(
+//       id: _id, firstName: fName, lastName: lName, address: address);
+//       var result = await MongoDatabase.insert(data);
+//     ScaffoldMessenger.of(context)
+//     .showSnackBar(SnackBar(content: Text("Insert ID"+ _id.$oid)));
+//      _clearAll();
+//   }
 
-  void _clearAll(){
-    fnameController.text ="";
-    lnameController.text ="";
-    addressController.text ="";
-  }
+//   void _clearAll(){
+//     fnameController.text ="";
+//     lnameController.text ="";
+//     addressController.text ="";
+//   }
 
-  void _fakeData() {
-    setState(() {
-      fnameController.text = faker.person.firstName();
-      lnameController.text = faker.person.firstName();
-      addressController.text =
-          faker.address.streetAddress() + "\n" + faker.address.streetAddress();
-    });
-  }
-}
+//   void _fakeData() {
+//     setState(() {
+//       fnameController.text = faker.person.firstName();
+//       lnameController.text = faker.person.firstName();
+//       addressController.text =
+//           faker.address.streetAddress() + "\n" + faker.address.streetAddress();
+//     });
+//   }
+// }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

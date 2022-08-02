@@ -153,11 +153,11 @@ class navigationDrawer extends StatelessWidget {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => MySqlite()));
         break;
-      // case 5:
-      //   Navigator.of(context)
-      //       .push(MaterialPageRoute(builder: (context) => MongodbInsert()));
-      //   break;
-      // ignore: no_duplicate_case_values
+      case 5:
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => MongodbInsert()));
+        break;
+      
       case 6:
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => LoginMenu()));
